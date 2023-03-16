@@ -5,9 +5,9 @@ import {
   TMDB_TRENDING,
 } from "@/constants/endpoints";
 import request from "@/utils/request";
-import { Response } from "./types";
+import { Movie } from "./types";
 
-export const fetchTrendingList = (): Promise<Response[]> => {
+export const fetchTrendingList = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_TRENDING}?api_key=${process.env.TMDB_API_KEY}`
@@ -15,7 +15,7 @@ export const fetchTrendingList = (): Promise<Response[]> => {
     .then((res) => res.data.results)
     .catch((_) => []);
 };
-export const fetchNetflixOriginals = (): Promise<Response[]> => {
+export const fetchNetflixOriginals = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_NETFLIX_ORIGINALS}?api_key=${process.env.TMDB_API_KEY}&with_networks=213`
@@ -23,7 +23,7 @@ export const fetchNetflixOriginals = (): Promise<Response[]> => {
     .then((res) => res.data.results)
     .catch((_) => []);
 };
-export const fetchTopRated = (): Promise<Response[]> => {
+export const fetchTopRated = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_TOP_RATED}?api_key=${process.env.TMDB_API_KEY}&with_=`
@@ -32,7 +32,7 @@ export const fetchTopRated = (): Promise<Response[]> => {
     .catch((_) => []);
 };
 
-export const fetchActionMovies = (): Promise<Response[]> => {
+export const fetchActionMovies = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_DISCOVER_MOVIE}?api_key=${process.env.TMDB_API_KEY}&with_generes=28`
@@ -40,7 +40,7 @@ export const fetchActionMovies = (): Promise<Response[]> => {
     .then((res) => res.data.results)
     .catch((_) => []);
 };
-export const fetchComedyMovies = (): Promise<Response[]> => {
+export const fetchComedyMovies = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_DISCOVER_MOVIE}?api_key=${process.env.TMDB_API_KEY}&with_generes=35`
@@ -48,7 +48,7 @@ export const fetchComedyMovies = (): Promise<Response[]> => {
     .then((res) => res.data.results)
     .catch((_) => []);
 };
-export const fetchHorrorMovies = (): Promise<Response[]> => {
+export const fetchHorrorMovies = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_DISCOVER_MOVIE}?api_key=${process.env.TMDB_API_KEY}&with_generes=27`
@@ -56,7 +56,7 @@ export const fetchHorrorMovies = (): Promise<Response[]> => {
     .then((res) => res.data.results)
     .catch((_) => []);
 };
-export const fetchRomanceMovies = (): Promise<Response[]> => {
+export const fetchRomanceMovies = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_DISCOVER_MOVIE}?api_key=${process.env.TMDB_API_KEY}&with_generes=10749`
@@ -64,7 +64,7 @@ export const fetchRomanceMovies = (): Promise<Response[]> => {
     .then((res) => res.data.results)
     .catch((_) => []);
 };
-export const fetchDocumentries = (): Promise<Response[]> => {
+export const fetchDocumentries = (): Promise<Movie[]> => {
   return request
     .get(
       `${process.env.TMDB_BASE_URL}${TMDB_DISCOVER_MOVIE}?api_key=${process.env.TMDB_API_KEY}&with_generes=99`

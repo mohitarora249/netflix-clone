@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { Response } from "../../services/movies/types";
+import { Movie } from "../../services/movies/types";
 
 type Props = {
   title: string;
-  fetchDataFn: () => Promise<Response[]>;
+  fetchDataFn: () => Promise<Movie[]>;
   queryKey: string;
   tileVariant?: "verticle" | "horizontal";
 };

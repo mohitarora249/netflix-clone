@@ -1,4 +1,4 @@
-export type Response = {
+export type Movie = {
   adult: boolean;
   backdrop_path: string;
   id: number;

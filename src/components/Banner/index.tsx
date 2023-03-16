@@ -1,9 +1,8 @@
-import { Response } from "@/services/movies/types";
+import { Movie } from "@/services/movies/types";
 import { truncate } from "@utils/strings";
-import Image from "next/image";
 
 type Props = {
-  movie: Response;
+  movie: Movie;
 };
 
 const Banner = ({ movie }: Props) => {
@@ -16,11 +15,6 @@ const Banner = ({ movie }: Props) => {
         backgroundPosition: "center center",
       }}
     >
-      {/* <Image
-        src={`${process.env.TMDB_IMAGE_BASE_URL}${movie.backdrop_path}`}
-        alt={movie.name}
-        fill
-      /> */}
       <MovieDetails name={movie.name} desc={movie.overview} />
     </div>
   );
